@@ -43,6 +43,7 @@ public class Main {
                 && !esContraseniaMala(password)) {
             System.out.println("Contrasenia Valida");
             Usuario usuario1 = new Usuario(usuario,password);
+            System.out.println("Usuario creado");
         }
         else {
             System.out.println("Tu contrasenia es incorrecta por los siguientes motivos:");
