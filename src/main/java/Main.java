@@ -94,44 +94,12 @@ public class Main {
 //        String pattern = "(?=.*[@#$%^&+=_]).*$";
 //        System.out.println(passwd.matches(pattern));
     }
-    static public boolean validaContrasenia(String contrasenia){
-        if (esContraseniaCompleja(contrasenia) && !esContraseniaMala(contrasenia)){
-            return true;
-        } else {
-            return false;
-        }
-    }
+
 
     static public boolean esContraseniaMala(String contrasenia){
         List<String> peoresContrasenias;
         peoresContrasenias = listaPeoresContrasenias();
         return peoresContrasenias.contains(contrasenia);
-    }
-
-    static public boolean poseeNumeros(String contrasenia){
-        String pattern = "(?=..*[0-9]).*$";
-        return contrasenia.matches(pattern);
-    }
-    static public boolean poseeMinusculas(String contrasenia){
-        String pattern = "(?=.*[a-z]).*$";
-        return contrasenia.matches(pattern);
-    }
-    static public boolean poseeMayusculas(String contrasenia){
-        String pattern = "(?=.*[A-Z]).*$";
-        return contrasenia.matches(pattern);
-    }
-    static public boolean poseeCaracteresEspeciales(String contrasenia){
-        String pattern = "(?=.*[@#$%^&+=_]).*$";
-        return contrasenia.matches(pattern);
-    }
-
-    static public boolean esContraseniaCompleja(String contrasenia){
-        String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
-        return contrasenia.matches(pattern);
-    }
-
-    static public boolean esContraseniaCorta(String contrasenia){
-        return contrasenia.length()<8;
     }
 
     static public List<String> listaPeoresContrasenias(){
